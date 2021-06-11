@@ -5,7 +5,7 @@
 (require json
          net/url)
 
-; send a hash to a jsonrpc server, receive a hash as response
+; send a jsexpr to a jsonrpc server, receive a jsexpr as response
 ;
 ; (jsonrpc-send! "http://127.0.0.1:8123/jsonrpc"
 ;                (hasheq 'method "JSONRPC.Introspect" 'jsonrpc "2.0" 'id "0"))
