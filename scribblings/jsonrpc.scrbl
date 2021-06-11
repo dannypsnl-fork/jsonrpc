@@ -1,11 +1,11 @@
 #lang scribble/manual
 
-@require[@for-label[racket-project
+@require[@for-label[jsonrpc
                     racket/base]]
 
-@title{racket-project}
+@title{jsonrpc}
 @author{Lîm Tsú-thuàn}
 
-@defmodule[racket-project]
+@defmodule[jsonrpc]
 
 Package Description Here
