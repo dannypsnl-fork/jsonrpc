@@ -1,13 +1,13 @@
 #lang racket
 
-(provide start)
+(provide jsonrpc-start)
 
 (require web-server/servlet-env
          web-server/http/request-structs
          web-server/http/json
          json)
 
-(define (start jsonrpc-handler)
+(define (jsonrpc-start jsonrpc-handler)
   (λ (request)
     (define json-str (request-post-data/raw request))
     (match json-str
@@ -30,7 +30,7 @@
     method)
 
   (serve/servlet
-   (start user-handler)
+   (jsonrpc-start user-handler)
    #:port 4389
    #:launch-browser? #f
    #:servlet-path "/jsonrpc"))
