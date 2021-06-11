@@ -7,8 +7,9 @@
 
 (module+ main
  (jsonrpc-send!
- "http://127.0.0.1:4389/jsonrpc"
+ "http://localhost:4389/jsonrpc"
  (hasheq 'jsonrpc "2.0"
+         'id "0"
          'method "initialize"
          'params (hasheq 'processId 0
                          'rootUri "file://Users/linzizhuan/dannypsnl/jsonrpc"
@@ -20,8 +21,9 @@
                                                'documentRangeFormattingProvider #t))))
 
 (jsonrpc-send!
- "http://127.0.0.1:4389/jsonrpc"
+ "http://localhost:4389/jsonrpc"
  (hasheq 'jsonrpc "2.0"
+         'id "1"
          'method "textDocument/definition"
          'params (hasheq 'textDocument
                          (hasheq 'uri "file://Users/linzizhuan/dannypsnl/jsonrpc/test.go")
