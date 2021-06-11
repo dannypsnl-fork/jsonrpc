@@ -6,12 +6,17 @@
 ; command: go-langserver -mode tcp
 
 (jsonrpc-send!
-   "http://127.0.0.1:4389/jsonrpc"
-   (hasheq 'jsonrpc "2.0"
-           'method "initialize"
-           'params (hasheq 'processId 0
-                           'rootUri "file://Users/linzizhuan/dannypsnl/jsonrpc"
-                           'capabilities (hasheq))))
+ "http://127.0.0.1:4389/jsonrpc"
+ (hasheq 'jsonrpc "2.0"
+         'method "initialize"
+         'params (hasheq 'processId 0
+                         'rootUri "file://Users/linzizhuan/dannypsnl/jsonrpc"
+                         'capabilities (hasheq 'hoverProvider #t
+                                               'definitionProvider #t
+                                               'documentSymbolProvider #t
+                                               'documentLinkProvider #t
+                                               'documentFormattingProvider #t
+                                               'documentRangeFormattingProvider #t))))
 
 (jsonrpc-send!
  "http://127.0.0.1:4389/jsonrpc"
