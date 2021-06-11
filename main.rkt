@@ -5,7 +5,8 @@
 ; go install github.com/sourcegraph/go-langserver@latest
 ; command: go-langserver -mode tcp
 
-(jsonrpc-send!
+(module+ main
+ (jsonrpc-send!
  "http://127.0.0.1:4389/jsonrpc"
  (hasheq 'jsonrpc "2.0"
          'method "initialize"
@@ -26,4 +27,4 @@
                          (hasheq 'uri "file://Users/linzizhuan/dannypsnl/jsonrpc/test.go")
                          'position
                          (hasheq 'line 1
-                                 'character 0))))
+                                 'character 0)))))
