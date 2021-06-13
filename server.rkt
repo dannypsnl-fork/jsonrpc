@@ -18,7 +18,6 @@
                 'result '()))]
       [json-str
        (define json (bytes->jsexpr json-str))
-       (displayln json)
        (response/jsexpr
         (hasheq 'jsonrpc "2.0"
                 'id (hash-ref json 'id)
