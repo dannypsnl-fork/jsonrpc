@@ -1,6 +1,7 @@
 #lang racket
 
-(provide jsonrpc-start
+(provide server-port
+         jsonrpc-start
          jsonrpc-send!)
 
 (require "client.rkt"
