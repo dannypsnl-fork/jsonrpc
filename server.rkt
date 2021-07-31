@@ -21,11 +21,8 @@
                 'result '()))]
       [json-str
        (define json (bytes->jsexpr json-str))
-       (response/jsexpr
-        (hasheq 'jsonrpc "2.0"
-                'id (hash-ref json 'id)
-                'result (jsonrpc-handler (hash-ref json 'method)
-                                         (hash-ref json 'params))))])))
+       (jsonrpc-handler (hash-ref json 'method)
+                        (hash-ref json 'params))])))
 
 (module+ main
   (define (user-handler method params)

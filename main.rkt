@@ -2,7 +2,10 @@
 
 (provide server-port
          jsonrpc-start
-         jsonrpc-send!)
+         jsonrpc-send!
+         success-response
+         error-response)
 
 (require "client.rkt"
-         "server.rkt")
+         "server.rkt"
+         "response.rkt")
