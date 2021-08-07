@@ -34,12 +34,12 @@
 @section{server}
 
 @defform[(jsonrpc-start user-handler)
-         #:contracts [(user-handler (-> string? jsexpr? void?))]]{
+         #:contracts [(user-handler (-> integer? string? jsexpr? void?))]]{
  Example
 
  @(racketblock
-   (define (user-handler method params)
-     method)
+   (define (user-handler id method params)
+     (success-response id params))
 
    (serve/servlet
     (jsonrpc-start user-handler)

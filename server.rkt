@@ -21,12 +21,15 @@
                 'result '()))]
       [json-str
        (define json (bytes->jsexpr json-str))
-       (jsonrpc-handler (hash-ref json 'method)
+       (jsonrpc-handler (hash-ref json 'id)
+                        (hash-ref json 'method)
                         (hash-ref json 'params))])))
 
 (module+ main
-  (define (user-handler method params)
-    method)
+  (require "response.rkt")
+
+  (define (user-handler id method params)
+    (success-response params))
 
   (serve/servlet
    (jsonrpc-start user-handler)
